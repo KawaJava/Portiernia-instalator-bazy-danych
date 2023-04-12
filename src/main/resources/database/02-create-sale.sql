@@ -1,0 +1,11 @@
+--liquibase formatted sql
+--changeset root:2
+
+CREATE TABLE `sale` (
+  `SALA_ID` int NOT NULL AUTO_INCREMENT,
+  `SALA_NUMER` varchar(45) NOT NULL,
+  `SALA_AKT` tinyint NOT NULL,
+  PRIMARY KEY (`SALA_ID`),
+  UNIQUE KEY `SALA_NAZWA_UNIQUE` (`SALA_NUMER`),
+  UNIQUE KEY `SALA_ID_UNIQUE` (`SALA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

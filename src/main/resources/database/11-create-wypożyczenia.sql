@@ -1,0 +1,19 @@
+--liquibase formatted sql
+--changeset root:11
+
+CREATE TABLE `wypożyczenia` (
+  `WYP_ID` int NOT NULL AUTO_INCREMENT,
+  `PRAC_ID` int NOT NULL,
+  `SALA_ID` int NOT NULL,
+  `WYP_DATA` date NOT NULL,
+  `WYP_CZASWYD` time NOT NULL,
+  `WYP_CZASOD` time DEFAULT NULL,
+  `WYP_TERMIN` time NOT NULL,
+  `WYP_POW` tinyint NOT NULL,
+  PRIMARY KEY (`WYP_ID`),
+  UNIQUE KEY `WYP_ID_UNIQUE` (`WYP_ID`),
+  KEY `prac_id_idx` (`PRAC_ID`),
+  KEY `SALA_ID_2_idx` (`SALA_ID`),
+  CONSTRAINT `PRAC_ID2` FOREIGN KEY (`PRAC_ID`) REFERENCES `pracownicy` (`PRAC_ID`),
+  CONSTRAINT `SALA_ID2` FOREIGN KEY (`SALA_ID`) REFERENCES `sale` (`SALA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

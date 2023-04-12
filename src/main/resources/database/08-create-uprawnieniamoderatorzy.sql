@@ -1,0 +1,11 @@
+--liquibase formatted sql
+--changeset root:8
+
+CREATE TABLE `uprawnieniamoderatorzy` (
+  `UPRMOD_ID` int NOT NULL AUTO_INCREMENT,
+  `UPRMOD_NAZWA` varchar(45) NOT NULL,
+  `UPRMOD_OPIS` longtext,
+  PRIMARY KEY (`UPRMOD_ID`),
+  UNIQUE KEY `UPRMOD_ID_UNIQUE` (`UPRMOD_ID`),
+  UNIQUE KEY `UPR_NAZWA_UNIQUE` (`UPRMOD_NAZWA`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

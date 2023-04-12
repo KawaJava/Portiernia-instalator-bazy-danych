@@ -1,0 +1,12 @@
+--liquibase formatted sql
+--changeset root:7
+
+CREATE TABLE `uprawnienia` (
+  `UPR_ID` int NOT NULL AUTO_INCREMENT,
+  `UPR_OPIS` varchar(45) NOT NULL,
+  `SALA_ID` int NOT NULL,
+  PRIMARY KEY (`UPR_ID`),
+  UNIQUE KEY `UPR_ID_UNIQUE` (`UPR_ID`),
+  KEY `SALA_ID_idx` (`SALA_ID`),
+  CONSTRAINT `SALA_ID4` FOREIGN KEY (`SALA_ID`) REFERENCES `sale` (`SALA_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
